@@ -1,4 +1,5 @@
 #include "PlaylistListScreen.hpp"
+#include "PlaylistViewScreen.hpp"
 #include "Terminal.hpp"
 #include <iostream>
 
@@ -76,7 +77,8 @@ void PlaylistListScreen::handleInput() {
     if (key == Terminal::KEY_ENTER_ || key == '\r') {
         Playlist* selected = &playlists[selectedIndex_];
         app_.setActivePlaylist(selected);
-        app_.goBack();
+        // app_.goBack();
+        app_.switchScreen(std::make_unique<PlaylistViewScreen>(app_));
         return;
     }
     if (key >= '1' && key <= '9') {
@@ -84,7 +86,8 @@ void PlaylistListScreen::handleInput() {
         if (choice >= 1 && choice <= count) {
             Playlist* selected = &playlists[choice - 1];
             app_.setActivePlaylist(selected);
-            app_.goBack();
+            // app_.goBack();
+            app_.switchScreen(std::make_unique<PlaylistViewScreen>(app_));
         }
         return;
     }

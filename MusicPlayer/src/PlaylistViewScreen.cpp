@@ -293,6 +293,8 @@ void PlaylistViewScreen::handleInput() {
         if(sel == -1) return;
         app_.addSongToPlaylist(current, displayedSongs_[sel]);
 
+
+        displayedSongs_ = app_.getActivePlaylist()->getSongs();
         Terminal::printAt(Terminal::height()-1, 0, names[sel] + " Added to " + current->getName(), Terminal::CP_GREEN);
         Terminal::refresh();
         usleep(800000);

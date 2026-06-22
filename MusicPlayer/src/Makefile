@@ -31,7 +31,7 @@ Player.o: Player.cpp Player.hpp miniaudio.h
 Playlist.o: Playlist.cpp Playlist.hpp
 	g++ -c Playlist.cpp
 
-PlaylistListScreen.o: PlaylistListScreen.cpp PlaylistListScreen.hpp Terminal.hpp
+PlaylistListScreen.o: PlaylistListScreen.cpp PlaylistListScreen.hpp Terminal.hpp PlaylistViewScreen.hpp
 	g++ -c PlaylistListScreen.cpp
 
 PlaylistViewScreen.o: PlaylistViewScreen.cpp PlaylistViewScreen.hpp Terminal.hpp
